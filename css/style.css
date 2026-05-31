@@ -174,6 +174,31 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .scroll-cue span { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 5px; height: 8px; border-radius: 4px; background: #fff; animation: scrollDot 1.6s infinite; }
 @keyframes scrollDot { 0% { opacity: 0; top: 8px; } 50% { opacity: 1; } 100% { opacity: 0; top: 24px; } }
 
+/* ===== Choose your path ===== */
+.paths { padding: 90px 0 96px; background: var(--cream); }
+.path-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.path-card {
+  position: relative; overflow: hidden; display: block; text-decoration: none;
+  border-radius: var(--radius); padding: 46px 40px; color: #fff;
+  box-shadow: var(--shadow); transition: transform .35s ease, box-shadow .35s ease;
+}
+.path-card:hover { transform: translateY(-8px); box-shadow: 0 26px 50px -18px rgba(31,95,91,.5); }
+.path-yoga { background: linear-gradient(150deg, var(--saffron), var(--amber)); }
+.path-music { background: linear-gradient(150deg, var(--teal), var(--teal-dark)); }
+.path-card::after {
+  content: ""; position: absolute; right: -50px; bottom: -50px; width: 190px; height: 190px;
+  border-radius: 50%; background: rgba(255,255,255,.12); transition: transform .4s ease;
+}
+.path-card:hover::after { transform: scale(1.25); }
+.path-icon { font-size: 3rem; margin-bottom: 16px; position: relative; }
+.path-card h3 { color: #fff; font-size: 2rem; margin-bottom: 10px; position: relative; }
+.path-card p { color: rgba(255,255,255,.92); margin-bottom: 22px; position: relative; font-size: 1rem; }
+.path-link {
+  position: relative; display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 600; font-size: 1.02rem; transition: gap .25s ease;
+}
+.path-card:hover .path-link { gap: 12px; }
+
 /* ===== Trust / Stats ===== */
 .trust { background: var(--teal-dark); color: #fff; padding: 50px 0; }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
@@ -367,7 +392,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
   .nav-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   .announce { font-size: .76rem; gap: 7px; padding: 8px 14px; white-space: normal; line-height: 1.35; }
-  .cards, .info-cards, .syllabus-list, .inperson-points { grid-template-columns: 1fr; }
+  .cards, .info-cards, .syllabus-list, .inperson-points, .path-cards { grid-template-columns: 1fr; }
   .hero-actions, .contact-actions { flex-direction: column; align-items: stretch; }
   .btn { justify-content: center; }
   .footer-inner { flex-direction: column; text-align: center; }
