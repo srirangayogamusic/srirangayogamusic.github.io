@@ -19,8 +19,8 @@
   --radius: 18px;
   --maxw: 1140px;
   --announce-h: 40px;
-  --font-head: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Poppins", system-ui, sans-serif;
+  --font-head: "Marcellus", Georgia, serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,7 +40,10 @@ body {
 
 img { max-width: 100%; display: block; }
 
-h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12; color: var(--teal-dark); }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 400; line-height: 1.16; letter-spacing: .3px; color: var(--teal-dark); }
+/* Marcellus is single-weight; keep heading-font elements at 400 to avoid faux-bold */
+.brand-text strong, .stat strong, .about-tag strong,
+.contact-trainer strong, .footer-brand strong { font-weight: 400; }
 
 .section { padding: 96px 0; }
 
@@ -279,7 +282,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .inperson-lead { max-width: 760px; margin: 0 auto 52px; text-align: center; }
 .inperson-lead p { color: var(--muted); font-size: 1.12rem; margin-bottom: 18px; }
 .inperson-lead p:first-of-type::first-letter {
-  font-family: var(--font-head); font-size: 3.4rem; font-weight: 700; color: var(--saffron);
+  font-family: var(--font-head); font-size: 3.6rem; font-weight: 400; color: var(--saffron);
   float: left; line-height: .8; margin: 6px 12px 0 0;
 }
 .inperson-points { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
