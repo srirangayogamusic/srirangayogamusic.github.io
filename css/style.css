@@ -82,6 +82,22 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 400; line-height: 1.16;
 .btn-outline:hover { background: rgba(255,255,255,.12); }
 .btn-lg { padding: 17px 36px; font-size: 1.05rem; }
 
+/* ===== Icons (inline SVG line icons) ===== */
+.card-icon { color: var(--saffron-dark); }
+.ip-icon { color: var(--teal); }
+.brand-mark { color: var(--amber); }
+.card-icon svg { width: 30px; height: 30px; }
+.ip-icon svg { width: 28px; height: 28px; }
+.path-icon { display: flex; }
+.path-icon svg { width: 42px; height: 42px; }
+.brand-mark svg { width: 34px; height: 34px; }
+.btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.stat strong svg { width: 38px; height: 38px; margin: 0 auto; }
+.eyebrow svg { width: 16px; height: 16px; vertical-align: -3px; margin-right: 6px; }
+.badge svg { width: 15px; height: 15px; vertical-align: -2px; margin-right: 6px; }
+.about-list li { display: flex; align-items: flex-start; gap: 10px; }
+.about-list svg { width: 19px; height: 19px; flex: 0 0 19px; margin-top: 4px; color: var(--saffron); }
+
 /* ===== Announcement bar ===== */
 .announce {
   position: fixed; top: 0; left: 0; right: 0; z-index: 110;
