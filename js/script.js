@@ -1,5 +1,5 @@
 /* ===================================================================
-   Sri Ranga Yoga & Music — interactions
+   Sri Ranga Yoga & Music | interactions
    =================================================================== */
 (function () {
   "use strict";
