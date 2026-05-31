@@ -8,6 +8,15 @@
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
 
+  /* --- Keep navbar offset in sync with announcement bar height --- */
+  const announce = document.getElementById("announce");
+  const syncAnnounceHeight = () => {
+    const h = announce ? announce.offsetHeight : 0;
+    document.documentElement.style.setProperty("--announce-h", h + "px");
+  };
+  syncAnnounceHeight();
+  window.addEventListener("resize", syncAnnounceHeight);
+
   /* --- Navbar background on scroll --- */
   const onScroll = () => {
     if (window.scrollY > 40) navbar.classList.add("scrolled");

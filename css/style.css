@@ -18,13 +18,14 @@
   --shadow-sm: 0 8px 24px -12px rgba(43, 38, 32, 0.25);
   --radius: 18px;
   --maxw: 1140px;
+  --announce-h: 40px;
   --font-head: "Cormorant Garamond", Georgia, serif;
   --font-body: "Poppins", system-ui, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 
 body {
   font-family: var(--font-body);
@@ -78,9 +79,33 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
 .btn-outline:hover { background: rgba(255,255,255,.12); }
 .btn-lg { padding: 17px 36px; font-size: 1.05rem; }
 
+/* ===== Announcement bar ===== */
+.announce {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 9px 18px; white-space: nowrap;
+  background: linear-gradient(90deg, var(--saffron-dark), var(--saffron), var(--amber));
+  color: #fff; font-size: .88rem; font-weight: 500; text-align: center;
+  box-shadow: 0 2px 14px -6px rgba(199, 93, 24, .8);
+  animation: announceGlow 1.8s ease-in-out infinite;
+}
+.announce-text { animation: announceBlink 1.4s ease-in-out infinite; }
+.announce a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.announce a:hover { color: var(--cream); }
+.announce-dot {
+  width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 0 rgba(255,255,255,.7); animation: dotBlink 1s steps(1) infinite;
+}
+@keyframes dotBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: .15; } }
+@keyframes announceBlink { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+@keyframes announceGlow { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.12); } }
+@media (prefers-reduced-motion: reduce) {
+  .announce, .announce-text, .announce-dot { animation: none; }
+}
+
 /* ===== Navbar ===== */
 .navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: var(--announce-h); left: 0; right: 0; z-index: 100;
   padding: 16px 0; transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
 }
 .navbar.scrolled {
@@ -308,6 +333,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12;
   .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .nav-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .announce { font-size: .76rem; gap: 7px; padding: 8px 14px; white-space: normal; line-height: 1.35; }
   .cards, .info-cards, .syllabus-list { grid-template-columns: 1fr; }
   .hero-actions, .contact-actions { flex-direction: column; align-items: stretch; }
   .btn { justify-content: center; }
